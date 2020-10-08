@@ -61,6 +61,10 @@ app.get("/books", function(req, res) {
     }
 });
 
+app.get("/author", function(req, res) {
+    res.render("author")
+});
+
 app.get("/login", function(req, res) {
     res.render("login")
 });
