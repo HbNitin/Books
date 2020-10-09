@@ -24,7 +24,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/userLogin", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://admin-hacker:Hacker123@cluster0.zsn95.mongodb.net/userLogin", { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema({
@@ -50,14 +50,26 @@ app.get("/register", function(req, res) {
 });
 
 app.get("/addbooks", function(req, res) {
-    res.render("addbooks")
-})
+    if (req.isAuthenticated()) {
+        res.render("addbooks");
+    } else {
+        res.redirect("/login");
+    }
+});
 
 app.get("/books", function(req, res) {
     if (req.isAuthenticated()) {
         res.render("books");
     } else {
         res.redirect("/login");
+    }
+});
+
+app.get("/view", function(req, res) {
+    if (req.isAuthenticated()) {
+        res.render("view")
+    } else {
+        res.redirect("/login")
     }
 });
 
