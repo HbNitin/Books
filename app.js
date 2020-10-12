@@ -30,6 +30,11 @@ mongoose.set("useCreateIndex", true);
 const userSchema = new mongoose.Schema({
     email: String,
     password: String,
+    title: String,
+    author: String,
+    description: String,
+    image: Image,
+    pagecount: Number
 });
 
 userSchema.plugin(passportLocalMongoose);
@@ -41,15 +46,15 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.get("/", function(req, res) {
+app.get("/", function (req, res) {
     res.render("home");
 });
 
-app.get("/register", function(req, res) {
+app.get("/register", function (req, res) {
     res.render("register")
 });
 
-app.get("/addbooks", function(req, res) {
+app.get("/addbooks", function (req, res) {
     if (req.isAuthenticated()) {
         res.render("addbooks");
     } else {
@@ -57,7 +62,7 @@ app.get("/addbooks", function(req, res) {
     }
 });
 
-app.get("/books", function(req, res) {
+app.get("/books", function (req, res) {
     if (req.isAuthenticated()) {
         res.render("books");
     } else {
@@ -65,7 +70,7 @@ app.get("/books", function(req, res) {
     }
 });
 
-app.get("/view", function(req, res) {
+app.get("/view", function (req, res) {
     if (req.isAuthenticated()) {
         res.render("view")
     } else {
@@ -73,48 +78,56 @@ app.get("/view", function(req, res) {
     }
 });
 
-app.get("/author", function(req, res) {
+app.get("/author", function (req, res) {
     res.render("author")
 });
 
-app.get("/login", function(req, res) {
+app.get("/login", function (req, res) {
     res.render("login")
 });
 
-app.get("/logout", function(req, res) {
+app.get("/logout", function (req, res) {
     req.logOut();
     res.redirect("/");
 });
 
-app.post("/register", function(req, res) {
-   User.register({username: req.body.username}, req.body.password, function(err, user) {
-       if (err) {
-           console.log(err);
-           res.redirect("/register")
-       } else {
-           passport.authenticate("local")(req, res, function() {
-               res.redirect("/books")
-           });
-       }
-   });
-});
-
-app.post("/login", function(req, res) {
-    const user = new User({
-        username: req.body.username,
-        password: req.body.password
-    });
-    req.logIn(user, function(err) {
+app.post("/register", function (req, res) {
+    User.register({ username: req.body.username }, req.body.password, function (err, user) {
         if (err) {
             console.log(err);
+            res.redirect("/register")
         } else {
-            passport.authenticate("local")(req, res, function() {
+            passport.authenticate("local")(req, res, function () {
                 res.redirect("/books")
             });
         }
     });
 });
 
-app.listen(3000, function() {
+app.post("/login", function (req, res) {
+    const user = new User({
+        username: req.body.username,
+        password: req.body.password
+    });
+    req.logIn(user, function (err) {
+        if (err) {
+            console.log(err);
+        } else {
+            passport.authenticate("local")(req, res, function () {
+                res.redirect("/books")
+            });
+        }
+    });
+});
+
+app.post("/addbooks", function(req, res) {
+    const 
+})
+
+app.put("/addbooks", function(req, res) {
+    
+})
+
+app.listen(3000, function () {
     console.log("Server Started on 3000");
 });
