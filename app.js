@@ -15,7 +15,7 @@ app.use(express.static("public"));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(session({
+app.use(session({   
     secret: "ourlittlesecret.",
     resave: false,
     saveUninitialized: false
@@ -30,11 +30,11 @@ mongoose.set("useCreateIndex", true);
 const userSchema = new mongoose.Schema({
     email: String,
     password: String,
-    title: String,
-    author: String,
-    description: String,
-    image: Image,
-    pagecount: Number
+    // title: String,
+    // author: String,
+    // description: String,
+    // image: Image,
+    // pagecount: Number
 });
 
 userSchema.plugin(passportLocalMongoose);
@@ -120,13 +120,13 @@ app.post("/login", function (req, res) {
     });
 });
 
-app.post("/addbooks", function(req, res) {
-    const 
-})
+// app.post("/addbooks", function(req, res) {
+//     const 
+// })
 
-app.put("/addbooks", function(req, res) {
-    
-})
+// app.put("/addbooks", function(req, res) {
+
+// })
 
 app.listen(3000, function () {
     console.log("Server Started on 3000");
