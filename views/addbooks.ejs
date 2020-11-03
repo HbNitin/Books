@@ -1,55 +1,53 @@
 <%- include('partials/header') %>
-<div class="masthead">
-    <div class="masthead-bg"></div>
-    <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-12 my-auto">
-                <div class="masthead-content text-white py-5 py-md-0">
-                    <form>
-                        <div class="row">
-                            <div class="col">
-                                <label>Title</label>
-                                <input type="text" class="form-control" placeholder="Enter title" name="title">
-                            </div>
-                            <div class="col">
-                                <label>Author</label>
-                                <input type="text" class="form-control" placeholder="Enter author" name="author">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <label>Publish Date</label>
-                                <input type="date" name="date" class="form-control" placeholder="01/12/2000">
-                            </div>
-                            <div class="col">
-                                <label>Page Count</label>
-                                <input type="number" name="pages" placeholder="Enter number of pages"
-                                    class="form-control">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <label>Cover</label>
-                                <div class="file-upload-wrapper" enctype="multipart/form-data">
-                                    <input type="file" id="input-file-now-custom-2" class="file-upload"
-                                        data-height="500" />
+<div class="mg-01"></div>
+    <div class="masthead">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12 my-auto">
+                    <div class="masthead-content text-white py-5 py-md-0">
+                        <form action="/addbooks" method="POST">
+                            <div class="row">
+                                <div class="col">
+                                    <label>Title</label>
+                                    <input type="text" class="form-control" placeholder="Enter title" name="abc">
+                                </div>
+                                <div class="col">
+                                    <label>Author</label>
+                                    <input type="text" class="form-control" placeholder="Enter author" name="def">
                                 </div>
                             </div>
-                            <div class="form-group col">
-                                <label for="comment">Description:</label>
-                                <textarea class="form-control" rows="5" id="comment"></textarea>
+                            <div class="row">
+                                <div class="col">
+                                    <label>Publish Date</label>
+                                    <input type="date" name="date" class="form-control">
+                                </div>
+                                <div class="col">
+                                    <label>Page Count</label>
+                                    <input type="number" name="pages" placeholder="1 to 150" class="form-control">
+                                </div>
                             </div>
-                        </div>
-                    </form>
-                    <div class="input-group-append">
-                        <a class="btn btn-secondary btn-lg register-buttons" type="submit" href=""
-                            style="color: white;">Clear</a>
-                        <a class="btn btn-secondary btn-lg register-buttons" type="submit" href=""
-                            style="color: white;">Create</a>
+                            <div class="row">
+                                <div class="col">
+                                    <label>Cover</label>
+                                    <div class="card card-body card-margin file-upload file-io">
+                                        <div class="file-upload-wrapper file-io" enctype="multipart/form-data">
+                                            <input type="file" id="input-file-now-custom-2" class="file-upload input-io"
+                                                data-height="500" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group-des col">
+                                    <label for="comment" class="lable-io">Description:</label>
+                                    <textarea class="form-control form-mg form-io" rows="5" id="comment" name="des"></textarea>
+                                </div>
+                            </div>
+                            <div class="input-group-append">
+                                <button class="btn btn-secondary btn-lg register-buttons" type="submit"
+                                    style="color: white;">Create</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 <%- include('partials/footer') %>

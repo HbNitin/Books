@@ -1,22 +1,51 @@
 <%- include('partials/header') %>
-<div class="masthead">
-  <div class="masthead-bg"></div>
-  <div class="container h-100">
-    <div class="row h-100">
-      <div class="col-12 my-auto">
-        <div class="masthead-content text-white py-5 py-md-0">
-          <h1 class="mb-3">Book Directory</h1>
-          <p class="mb-5">Make Your Own Book and upload on our best plaform started on
-            <strong>September 2020</strong>! Register for updates using the form below.</p>
-          <div class="input-group-append">
-            <a class="btn btn-secondary btn-lg register-buttons" type="submit" href="/register"
-              style="color: white;">Register</a>
-            <a class="btn btn-secondary btn-lg register-buttons" type="submit" href="/login"
-              style="color: white;">Login</a>
-          </div>
+<div class="mg-01"></div>
+    <div class="masthead">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12 my-auto">
+                    <div class="masthead-content text-white py-5 py-md-0">
+                        <h1>Books Directory.</h1>
+                        <p>Make Your Own Book and upload on our best plaform started on <strong>September
+                                2020</strong>! Register
+                            for updates using the form below.</p>
+                        <button class="btn btn-secondary btn-lg custom-btn" type="submit"
+                            onclick="document.getElementById('myId1').style.display='block'">Register</button>
+                        <button class="btn btn-secondary btn-lg custom-btn" type="submit"
+                            onclick="document.getElementById('myId').style.display='block'">Login</button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-</div>
+    <div class="from-group">
+        <div id="myId" class="modal">
+            <span onclick="document.getElementById('myId').style.display='none'" class="close"
+                title="Close Modal">&times;</span>
+            <form action="/login" method="POST" class="modal-content">
+                <div class="container">
+                    <h1 class="heading-lo">Login</h1>
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="Enter Email.." class="form-control input-co input-border" name="username">
+                    <label for="pwd">Password</label>
+                    <input type="password" placeholder="Enter Password.." class="input-border input-co form-control" name="password">
+                    <button type="submit" class="btn btn-secondary button-io">Login</a>
+                </div>
+            </form>
+        </div>
+        <div id="myId1" class="modal">
+            <span onclick="document.getElementById('myId1').style.display='none'" class="close"
+                title="Close Modal">&times;</span>
+            <form action="/register" method="POST" class="modal-content">
+                <div class="container">
+                    <h1 class="heading-lo">Register</h1>
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="Enter Email.." class="input-border form-control input-co" name="username">
+                    <label for="pwd">Password</label>
+                    <input type="password" placeholder="Enter Password.." class="input-border form-control input-co" name="password">
+                    <button type="submit" class="btn btn-secondary button-io">Sign Up</button>
+                </div>
+            </form>
+    </div>
+
 <%- include('partials/footer') %>

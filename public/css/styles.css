@@ -1,16 +1,189 @@
-.register-buttons {
-    margin: 5% 3% 5% 0;
-}
-
-.input-group-all {
-    margin-left: 10%;
-}
-
-.books {
-    text-align: right;
-}
-
 body {
-    background: #eeeded;
+    background-image: url("../img/bg-mobile-fallback.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
-  
+
+.container-fluid {
+    padding: 3% 15% 7%;
+}
+
+.custom-btn {
+    height: 10%;
+    width: 25%;
+    margin-left: 5px;
+}
+
+/* form {
+    border: 3px solid #fff;
+} */
+
+input[type=email], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ced4da;
+    box-sizing: border-box;
+}
+
+.button-io {
+    margin-top: 25px;
+}
+
+.container {
+    padding: 16px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 1.75rem auto;
+    border: 1px solid #888;
+    left: 50px;
+    height: 450px;
+    max-width: 450px;
+    position: relative;
+    width: auto;
+    z-index: 1;
+}
+
+.close {
+    position: absolute;
+    right: 350px;
+    top: 50px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+.heading-lo {
+    text-align: center;
+    padding: 10px 10px 15px 25px;
+}
+
+.input-border {
+    border-radius: 5px;
+    height: 50px;
+}
+
+.books_btn {
+    margin-right: 5px;
+}
+
+.form-group-des {
+    margin-bottom: 1rem;
+    margin-left: -80px; 
+}
+
+.file-upload {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    padding: 5px 10px;
+    text-align: center;
+    color: #ccc;
+}
+
+.form-io {
+    margin-left: 40px;
+}
+
+.file-io {
+    height: 134px;
+    width: 190px;
+}
+
+.lable-io {
+    margin-left: 40px;
+}
+
+.input-io {
+    visibility: hidden;
+}
+
+.card {
+    margin-left: 40px;
+    border-radius: 8px;
+}
+
+.card-image {
+    height: 250px;
+    width: 208px;
+    border-radius: 8px;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-header {
+    padding: 0;
+}
+
+.card-text {
+    border-top: 1px solid #111;
+}
+
+.h-margin {
+    margin: 20px;
+}
+
+.card-deck {
+    width: 1200px;
+    margin-left: 50px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5rem + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+
+.card-margin {
+    margin: 0;
+}
+
+.form-mg {
+    width: 190px;
+}
+
+.input-co {
+    height: 50px;
+}

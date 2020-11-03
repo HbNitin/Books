@@ -1,21 +1,26 @@
 <%- include('partials/header') %>
-<div class="masthead">
-    <div class="masthead-bg"></div>
-    <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-12 my-auto">
-                <div class="masthead-content text-white py-5 py-md-0">
-                    <h1 class="mb-3">Book Directory</h1>
-                    <p class="mb-5">Update your book directory by clicking
-                        <strong>Update</strong>! Remove by clicking <strong>Delete</strong>!</p>
+
+<div class="mg-01"></div>
+    <div class="masthead">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12 my-auto">
+                    <div class="masthead-content text-white py-5 py-md-0">
+
+                        <h1 class="mb-3">Book Directory</h1>
+                        <p class="mb-5">Update your book directory by clicking
+                            <strong>Update</strong>! Remove by clicking <strong>Delete</strong>!</p>
+
+
+                        <a class="btn btn-secondary btn-lg books_btn" type="submit" href="/view" style="color: white;">View
+                            Books</a>
+                        <a class="btn btn-secondary btn-lg books_btn" type="submit" href="/addbooks" style="color: white;">Add
+                            Books</a>
+                        <a class="btn btn-secondary btn-lg books_btn" type="submit" href="/logout"
+                            style="color: white;">Logout</a>
+                    </div>
                 </div>
-                <div class="input-group-append input-group-all">
-                    <a class="btn btn-secondary btn-lg register-buttons" type="submit" href="/view" style="color: white;">View Books</a>
-                    <a class="btn btn-secondary btn-lg register-buttons" type="submit" href="/addbooks" style="color: white;">Add Books</a>
-                    <a class="btn btn-secondary btn-lg register-buttons" type="submit" href="/logout" style="color: white;">Logout</a>
-                  </div>
             </div>
         </div>
     </div>
-</div>
 <%- include('partials/footer') %>
